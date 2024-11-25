@@ -116,7 +116,7 @@ function findClosestPointIndex(coords: Coords, path: number[][]): number {
  * based on the path of the line and the stations involved in the trip. It then calculates the emissions for
  * the trip based on the type of line (tram or bus) and the emission factor associated with it.
  */
-function calculateEmissions(trip_details: any[], lignes: Map<string, Ligne>, stations: Map<string, Station>): number {
+function calculateEmissions(trip_details: TripDetail[], lignes: Map<string, Ligne>, stations: Map<string, Station>): number {
 	let emissions = 0;
 
 	for (const trip of trip_details) {
@@ -263,7 +263,7 @@ async function searchJourneys(
 	} else {
 		journeys = queryArrive.plan(physicalStationsDepart, physicalStationsDest, dateTime, dateToSeconds(dateTime));
 	}
-	let formattedJourneys = journeys.map(journey => formatJourney(journey, dateTime, stations, lignes, indexedTrips)).filter(journey => journey !== null);
+	const formattedJourneys = journeys.map(journey => formatJourney(journey, dateTime, stations, lignes, indexedTrips)).filter(journey => journey !== null);
 	formattedJourneys.sort((a, b) => a.trip_details.length - b.trip_details.length);
 	return formattedJourneys;
 }
@@ -276,11 +276,11 @@ async function searchJourneys(
  * @returns {FormattedJourney[]} - An array of journeys where each journey has unique line IDs in its trip details.
  */
 function filterJourneys(journeys: FormattedJourney[]) : FormattedJourney[] {
-	let filteredJourneys = [];
+	const filteredJourneys = [];
 	for (const journey of journeys) {
-		let trip = journey.trip_details;
-		let tripLines = trip.map((leg: TripDetail) => leg.ligne_id);
-		let uniqueLines = [...new Set(tripLines)];
+		const trip = journey.trip_details;
+		const tripLines = trip.map((leg: TripDetail) => leg.ligne_id);
+		const uniqueLines = [...new Set(tripLines)];
 		if (tripLines.length === uniqueLines.length) {
 			filteredJourneys.push(journey);
 		}
