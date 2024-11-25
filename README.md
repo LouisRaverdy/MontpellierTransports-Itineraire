@@ -1,5 +1,7 @@
 # Montpellier Transports - Itinéraire
 
+[![CodeFactor](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire/badge)](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire)
+
 ## Description
 Bienvenue dans le projet **Montpellier Transports - Itinéraire**, qui constitue le cœur de l'algorithme d'itinéraire de l'application [Montpellier Transports](https://montpellier-transports.fr).
 
