@@ -12,7 +12,7 @@ export function keyValue<T, U>(fn: (item: T) => [ObjectKey, U]): Reducer<T, Reco
 	}
 }
 
-export function pushNested<T extends Record<string, any>, U>(value: U, root: T, ...keys: ObjectKey[]): T {
+export function pushNested<T extends Record<string, unknown>, U>(value: U, root: T, ...keys: ObjectKey[]): T {
 	let base: unknown = root;
 
 	for (const key of keys.slice(0, -1)) {
