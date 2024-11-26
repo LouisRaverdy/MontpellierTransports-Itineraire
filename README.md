@@ -13,7 +13,7 @@ Cet algorithme offre une solution efficace pour le calcul d'itinéraires dans le
 
 ## Fonctionnalités
 - **Calcul rapide et optimal des itinéraires** pour les réseaux de transport public.
-- **Estimation des émissions de CO₂**pour les trajets en bus et tram, permettant aux utilisateurs de connaître l'impact environnemental de leurs déplacements.
+- **Estimation des émissions de CO₂** pour les trajets en bus et tram, permettant aux utilisateurs de connaître l'impact environnemental de leurs déplacements.
 - Implémentation améliorée de l'algorithme RAPTOR pour une meilleure compatibilité et des fonctionnalités étendues.
 - Open source, utilisable librement avec mention des crédits.
 
