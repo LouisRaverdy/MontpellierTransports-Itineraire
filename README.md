@@ -1,59 +1,55 @@
 # 🚋 Montpellier Transports - Itinéraire 🏙️
 
-**Montpellier Transports a besoin de toi !** 🫵
-👉 **Va à la section _"Comment Contribuer"_ pour savoir comment participer !**
+**Montpellier Transports a besoin de toi !** 🫵  
+👉 **Va à la section _"Comment Contribuer"_ pour savoir comment participer !**  
 
-[![CodeFactor](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire/badge)](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire)
+[![CodeFactor](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire/badge)](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire)  
 
----
 
-## 📌 Description
+## 📌 Description  
 
 Bienvenue dans le projet **Montpellier Transports - Itinéraire** 🚊 !  
-Ce projet est **le cœur de l'algorithme d'itinéraire** de l'application [Montpellier Transports](https://montpellier-transports.fr).
+Ce projet est **le cœur de l'algorithme d'itinéraire** de l'application [Montpellier Transports](https://montpellier-transports.fr).  
 
-🛠️ **Il implémente une version optimisée de l'algorithme RAPTOR** (_Round-based Public Transit Optimized Router_), initialement développé par [PlanarNetwork](https://github.com/planarnetwork/raptor).
+🛠️ **Il implémente une version optimisée de l'algorithme RAPTOR** (_Round-based Public Transit Optimized Router_), initialement développé par [PlanarNetwork](https://github.com/planarnetwork/raptor).  
 
 ⚡ **Cet algorithme permet de :**  
-✔️ Calculer les itinéraires **les plus rapides** et **optimaux** en transports publics.
-✔️ Prendre en compte **les horaires, les correspondances et les temps de trajet**.
-✔️ **Estimer les émissions de CO₂** pour évaluer l'impact écologique de chaque trajet.
+✔️ Calculer les itinéraires **les plus rapides** et **optimaux** en transports publics.  
+✔️ Prendre en compte **les horaires, les correspondances et les temps de trajet**.  
+✔️ **Estimer les émissions de CO₂** pour évaluer l'impact écologique de chaque trajet.  
 
----
 
-## 🤝 Comment Contribuer ?
+## 🤝 Comment Contribuer ?  
 
-Toutes les contributions sont **les bienvenues** ! 🚀
-Si tu cherches de l'inspiration, voici quelques pistes :
+Toutes les contributions sont **les bienvenues** ! 🚀  
+Si tu cherches de l'inspiration, voici quelques pistes :  
 
-✅ **Optimisation du code** (réduction du temps de calcul, optimisation serveur, etc.)
-✅ **Amélioration des itinéraires** (trouver les trajets les plus pertinents, éviter les erreurs)
-✅ **Ajout de nouvelles fonctionnalités** (suggestions bienvenues !)
+✅ **Optimisation du code** (réduction du temps de calcul, optimisation serveur, etc.)  
+✅ **Amélioration des itinéraires** (trouver les trajets les plus pertinents, éviter les erreurs)  
+✅ **Ajout de nouvelles fonctionnalités** (suggestions bienvenues !)  
 
-🔗 **N'hésite pas à proposer une issue ou une pull request !**
+🔗 **N'hésite pas à proposer une issue ou une pull request !**  
 
----
 
-## 🔥 Fonctionnalités
+## 🔥 Fonctionnalités  
 
-✅ **Calcul rapide et optimal** des itinéraires en transport public.
-✅ **Prise en compte des horaires et correspondances** pour des trajets précis.
-✅ **Estimation des émissions de CO₂** pour sensibiliser à l’impact environnemental.
-✅ **Optimisation de l'algorithme RAPTOR** pour une meilleure efficacité.
-✅ **Projet open-source** : libre d'utilisation avec mention des crédits.
+✅ **Calcul rapide et optimal** des itinéraires en transport public.  
+✅ **Prise en compte des horaires et correspondances** pour des trajets précis.  
+✅ **Estimation des émissions de CO₂** pour sensibiliser à l’impact environnemental.  
+✅ **Optimisation de l'algorithme RAPTOR** pour une meilleure efficacité.  
+✅ **Projet open-source** : libre d'utilisation avec mention des crédits.  
 
----
 
-## 🚀 Installation
+## 🚀 Installation  
 
-### 📌 Prérequis
+### 📌 Prérequis  
 
-🔹 **Node.js** (version **16** ou supérieure)
-🔹 **npm** (Node Package Manager)
+🔹 **Node.js** (version **16** ou supérieure)  
+🔹 **npm** (Node Package Manager)  
 
-### 📥 Étapes d'installation
+### 📥 Étapes d'installation  
 
-1️⃣ Clone le dépôt sur ta machine :
+1️⃣ Clone le dépôt sur ta machine :  
 ```bash
 git clone https://github.com/LouisRaverdy/MontpellierTransports-Itineraire.git
 cd MontpellierTransports-Itineraire
@@ -64,43 +60,42 @@ cd MontpellierTransports-Itineraire
 npm install
 ```
 
----
 
 ## ⚙️ Utilisation  
 
-### 🏗️ Compilation du projet
+### 🏗️ Compilation du projet  
 1️⃣ Avant de lancer l'application et à chaque modification, compile le projet avec :  
 ```bash
 npm run build
 ```
 
-### 📥 Récupération des données GTFS
-Après la compilation, télécharge les données en exécutant :
+### 📥 Récupération des données GTFS  
+Après la compilation, télécharge les données en exécutant :  
 ```bash
 npm run getter
 ```
 
-> ⚠️ **Note** : Les données GTFS sont mises à jour régulièrement.
-> 👉 Pense à les **re-télécharger environ toutes les semaines** pour garantir des itinéraires à jour ! ✅
+> ⚠️ **Note** : Les données GTFS sont mises à jour régulièrement.  
+> 👉 Pense à les **re-télécharger environ toutes les semaines** pour garantir des itinéraires à jour ! ✅  
 
-### ▶️ Lancement du projet
-Une fois les données récupérées et le projet compilé, démarre l’application avec :
+### ▶️ Lancement du projet  
+Une fois les données récupérées et le projet compilé, démarre l’application avec :  
 ```bash
 npm start
 ```
 
----
 
-## 🌍 API - Effectuer des requêtes  
+## 🌍 API - Effectuer des requêtes    
 
 Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour interagir avec le calculateur d'itinéraire.  
 📌 **Exemples d'utilisation avec Postman, cURL ou un client HTTP** :  
 
-### 📍 **Rechercher un itinéraire**
-**📌 POST** `/itineraire/trip`
+### 📍 **Rechercher un itinéraire**  
+**📌 POST** `/itineraire/trip`  
 
-🔹 **Description** : Recherche un itinéraire entre un départ et une destination, en prenant en compte les horaires et filtres.
-🔹 **Exemple de requête JSON** :
+🔹 **Description** : Recherche un itinéraire entre un départ et une destination, en prenant en compte les horaires et filtres.  
+<details>
+  <summary>📌 Cliquer pour voir l'exemple JSON</summary>
 ```json
 {
   "depart": "S5102",
@@ -110,9 +105,10 @@ Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour inte
   // "filters": ["Tram"] filtrer les trajets avec uniquement des trams
 }
 ```
+</details>
 
-### 📍 **Rechercher un chemin piéton**
-**📌 GET** `/itineraire/path`
+### 📍 **Rechercher un chemin piéton**  
+**📌 GET** `/itineraire/path`  
 
 🔹 **Description** : Trouve le chemin le plus court pour un piéton entre deux points géographiques.
 🔹 **Exemple d'URL** :
@@ -125,6 +121,8 @@ Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour inte
 
 🔹 **Description** : Recalcule le meme itinéraire en fonction d’une nouvelle date.
 🔹 **Exemple de requête JSON** :
+<details>
+  <summary>📌 Cliquer pour voir l'exemple JSON</summary>
 ```json
 {
    "tripDetails": [
@@ -215,10 +213,10 @@ Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour inte
   "isAller": true,
 }
 ```
+</details>
 
----
 
-## 🎯 Contribuer
+## 🎯 Contribuer  
 
 Les contributions sont **ouvertes à tous** ! 🤝  
 
@@ -234,15 +232,12 @@ Ouvre un ticket 🐛
 ```
 Merci d’utiliser **Montpellier Transports - Itinéraire** ! ❤️  
 
----
-
 
 ## ⚠️ Notes importantes  
 
-> ⚠️ **Évite de modifier le format des données d'entrée des requêtes**, sauf si nécessaire.
-> 🚀 **Les performances sont essentielles** : toute optimisation est la bienvenue !
+> ⚠️ **Évite de modifier le format des données d'entrée des requêtes**, sauf si nécessaire.  
+> 🚀 **Les performances sont essentielles** : toute optimisation est la bienvenue !  
 
----
 
 ## 👏 Crédits  
 
@@ -250,13 +245,10 @@ Merci d’utiliser **Montpellier Transports - Itinéraire** ! ❤️
 - 🛠️ **Développé pour** : [Montpellier Transports](https://montpellier-transports.fr)  
 - 🤝 **(Bientôt) Toi !** 🚀  
 
----
 
 ## 📜 Licence  
 
 🔓 Ce projet est sous licence **MIT**.  
 📌 Vous êtes libre de l'utiliser et de l'adapter, mais toute utilisation doit **mentionner les crédits** à ce projet et à l’algorithme **RAPTOR**.  
-
----
 
 ### 🚀 **Prêt à contribuer ? On t’attend !** 🏆
