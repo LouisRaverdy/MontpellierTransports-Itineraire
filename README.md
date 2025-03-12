@@ -26,7 +26,9 @@ Si tu cherches de l'inspiration, voici quelques pistes :
 
  -  **Optimisation du code** (réduction du temps de calcul, optimisation serveur, etc.)  
  -  **Amélioration des itinéraires** (trouver les trajets les plus pertinents, éviter les erreurs)  
- -  **Ajout de nouvelles fonctionnalités** (suggestions bienvenues !)  
+ -  **Ajout de nouvelles fonctionnalités** (suggestions bienvenues !)
+ -  **Tests & fiabilité** (tests unitaires, validation des données, détection des bugs)
+ -  **Amélioration de la note du repo** (améliorer le README, la note codefactor, meilleure organisation du code)
 
 🔗 **N'hésite pas à proposer une issue ou une pull request !**  
 
@@ -109,7 +111,7 @@ Exemples d'utilisation avec Postman, cURL ou un client HTTP :
 </details>
 
 > [!NOTE]
-> Vous pouvez utiliser "filters": ["Tram"] garder les trajets avec uniquement des trams
+> Vous pouvez utiliser `"filters": ["Tram"]` pour ne conserver que les trajets effectués en tram.
 
 ### 📍 **Rechercher un chemin piéton**  
 **GET** `/itineraire/path`  
