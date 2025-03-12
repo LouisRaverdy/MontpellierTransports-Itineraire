@@ -74,7 +74,8 @@ Après la compilation, télécharge les données en exécutant :
 npm run getter
 ```
 
-> ⚠️ **Note** : Les données GTFS sont mises à jour régulièrement.  
+> [!TIP]
+> Les données GTFS sont mises à jour régulièrement.  
 > 👉 Pense à les **re-télécharger environ toutes les semaines** pour garantir des itinéraires à jour ! ✅  
 
 ### ▶️ Lancement du projet  
@@ -87,14 +88,15 @@ npm start
 ## 🌍 API - Effectuer des requêtes    
 
 Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour interagir avec le calculateur d'itinéraire.  
-📌 **Exemples d'utilisation avec Postman, cURL ou un client HTTP** :  
+Exemples d'utilisation avec Postman, cURL ou un client HTTP :  
+
 
 ### 📍 **Rechercher un itinéraire**  
-**📌 POST** `/itineraire/trip`  
+**POST** `/itineraire/trip`  
 
 🔹 **Description** : Recherche un itinéraire entre un départ et une destination, en prenant en compte les horaires et filtres.  
 <details>
-  <summary>📌 Cliquer pour voir l'exemple JSON</summary>
+  <summary>⬇️ Cliquer pour voir l'exemple JSON</summary>
 
 ```json
 {
@@ -102,13 +104,15 @@ Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour inte
   "destination": "S5123",
   "datetime": "2025-03-22T08:24:00Z",
   "isAller": true,
-  // "filters": ["Tram"] filtrer les trajets avec uniquement des trams
 }
 ```
 </details>
 
+> [!NOTE]
+> Vous pouvez utiliser "filters": ["Tram"] garder les trajets avec uniquement des trams
+
 ### 📍 **Rechercher un chemin piéton**  
-**📌 GET** `/itineraire/path`  
+**GET** `/itineraire/path`  
 
 🔹 **Description** : Trouve le chemin le plus court pour un piéton entre deux points géographiques.
 🔹 **Exemple d'URL** :
@@ -117,12 +121,12 @@ Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour inte
 ```
 
 ### ⏳ Recalculer un itinéraire déja planifié
-**📌 POST** `/itineraire/delay`
+**POST** `/itineraire/delay`
 
 🔹 **Description** : Recalcule le meme itinéraire en fonction d’une nouvelle date.
 🔹 **Exemple de requête JSON** :
 <details>
-  <summary>📌 Cliquer pour voir l'exemple JSON</summary>
+  <summary>⬇️ Cliquer pour voir l'exemple JSON</summary>
 
 ```json
 {
@@ -236,8 +240,8 @@ Merci d’utiliser **Montpellier Transports - Itinéraire** ! ❤️
 
 ## ⚠️ Notes importantes  
 
-> ⚠️ **Évite de modifier le format des données d'entrée des requêtes**, sauf si nécessaire.  
-> 🚀 **Les performances sont essentielles** : toute optimisation est la bienvenue !  
+**Évite de modifier le format des données d'entrée des requêtes**, sauf si nécessaire.  
+**Les performances sont essentielles** : toute optimisation est la bienvenue !  
 
 
 ## 👏 Crédits  
