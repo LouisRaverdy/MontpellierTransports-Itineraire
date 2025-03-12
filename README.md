@@ -1,7 +1,7 @@
 # 🚋 Montpellier Transports - Itinéraire 🏙️
 
 **Montpellier Transports a besoin de toi !** 🫵  
-👉 Va à la section _"Comment Contribuer"_ pour savoir comment participer !  
+👉 Va à la section **Comment Contribuer** pour savoir comment participer !  
 
 [![CodeFactor](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire/badge)](https://www.codefactor.io/repository/github/louisraverdy/montpelliertransports-itineraire)  
 
