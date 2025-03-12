@@ -96,7 +96,7 @@ Exemples d'utilisation avec Postman, cURL ou un client HTTP :
 
 🔹 **Description** : Recherche un itinéraire entre un départ et une destination, en prenant en compte les horaires et filtres.  
 <details>
-  <summary>_Cliquer pour voir l'exemple JSON_</summary>
+  <summary><i>Cliquer pour voir l'exemple JSON</i></summary>
 
 ```json
 {
@@ -126,7 +126,7 @@ Exemples d'utilisation avec Postman, cURL ou un client HTTP :
 🔹 **Description** : Recalcule le meme itinéraire en fonction d’une nouvelle date.
 🔹 **Exemple de requête JSON** :
 <details>
-  <summary>_Cliquer pour voir l'exemple JSON_</summary>
+  <summary><i>Cliquer pour voir l'exemple JSON</i></summary>
 
 ```json
 {
