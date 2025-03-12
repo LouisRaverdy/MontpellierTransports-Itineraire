@@ -24,9 +24,9 @@ Ce projet est **le cœur de l'algorithme d'itinéraire** de l'application [Montp
 Toutes les contributions sont **les bienvenues** ! 🚀  
 Si tu cherches de l'inspiration, voici quelques pistes :  
 
-✅ **Optimisation du code** (réduction du temps de calcul, optimisation serveur, etc.)  
-✅ **Amélioration des itinéraires** (trouver les trajets les plus pertinents, éviter les erreurs)  
-✅ **Ajout de nouvelles fonctionnalités** (suggestions bienvenues !)  
+ -  **Optimisation du code** (réduction du temps de calcul, optimisation serveur, etc.)  
+ -  **Amélioration des itinéraires** (trouver les trajets les plus pertinents, éviter les erreurs)  
+ -  **Ajout de nouvelles fonctionnalités** (suggestions bienvenues !)  
 
 🔗 **N'hésite pas à proposer une issue ou une pull request !**  
 
@@ -36,7 +36,6 @@ Si tu cherches de l'inspiration, voici quelques pistes :
 ✅ **Calcul rapide et optimal** des itinéraires en transport public.  
 ✅ **Prise en compte des horaires et correspondances** pour des trajets précis.  
 ✅ **Estimation des émissions de CO₂** pour sensibiliser à l’impact environnemental.  
-✅ **Optimisation de l'algorithme RAPTOR** pour une meilleure efficacité.  
 ✅ **Projet open-source** : libre d'utilisation avec mention des crédits.  
 
 
@@ -96,6 +95,7 @@ Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour inte
 🔹 **Description** : Recherche un itinéraire entre un départ et une destination, en prenant en compte les horaires et filtres.  
 <details>
   <summary>📌 Cliquer pour voir l'exemple JSON</summary>
+
 ```json
 {
   "depart": "S5102",
@@ -123,6 +123,7 @@ Une fois le serveur lancé, tu peux effectuer des requêtes vers l'API pour inte
 🔹 **Exemple de requête JSON** :
 <details>
   <summary>📌 Cliquer pour voir l'exemple JSON</summary>
+
 ```json
 {
    "tripDetails": [
