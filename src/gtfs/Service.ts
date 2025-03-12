@@ -9,6 +9,9 @@ export class Service {
     private readonly dates: DateIndex,
   ) {}
 
+  /**
+   * Returns true if the service runs on the given date and day of week
+   */
   public runsOn(date: number, dow: DayOfWeek): boolean {
     return this.dates[date] || (
       !this.dates.hasOwnProperty(date) &&

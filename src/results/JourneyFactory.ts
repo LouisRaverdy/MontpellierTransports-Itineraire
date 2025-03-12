@@ -58,7 +58,7 @@ export class JourneyFactory implements ResultsFactory {
       } else {
         const [trip, start, end] = connection;
         const stopTimes = trip.stopTimes.slice(start, end + 1);
-        const origin = stopTimes[0].stop;
+        const origin = stopTimes[0].stopId;
 
         legs.push({ stopTimes, origin, destination, trip });
 
@@ -85,7 +85,7 @@ export class JourneyFactory implements ResultsFactory {
       } else {
         const [trip, start, end] = connection;
         const stopTimes = trip.stopTimes.slice(end, start + 1);
-        const destination = stopTimes[stopTimes.length - 1].stop;
+        const destination = stopTimes[stopTimes.length - 1].stopId;
 
         legs.push({ stopTimes: stopTimes, origin: destination, destination: origin, trip });
 

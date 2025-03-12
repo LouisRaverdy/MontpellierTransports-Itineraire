@@ -134,5 +134,5 @@ dist
 # Don't push the datas and build files
 build/*
 exports/*.json
-imports/*.json
-imports/*.zip
+imports/**/*.zip
+imports/**/*.json

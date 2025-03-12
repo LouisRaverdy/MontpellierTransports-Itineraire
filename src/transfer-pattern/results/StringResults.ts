@@ -53,7 +53,7 @@ export class StringResults {
 
     for (let destination = finalDestination, i = parseInt(k, 10); i > 0; i--) {
       const connection = kConnections[destination][i];
-      const origin = isTransfer(connection) ? connection.origin : connection[0].stopTimes[connection[1]].stop;
+      const origin = isTransfer(connection) ? connection.origin : connection[0].stopTimes[connection[1]].stopId;
 
       departureTime = isTransfer(connection)
           ? departureTime - connection.duration - this.interchange[connection.destination]

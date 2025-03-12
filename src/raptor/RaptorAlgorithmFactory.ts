@@ -4,12 +4,13 @@ import { QueueFactory } from "./QueueFactory";
 import { RouteScannerFactory, TripsIndexedByRoute } from "../raptor/RouteScanner";
 import { getDateNumber } from "../query/DateUtil";
 import { ScanResultsFactory } from "./ScanResultsFactory";
-import { MIN_INTERCHANGE_TIME } from "../index";
+import { MIN_INTERCHANGE_TIME } from "../utils/FormatUtils";
 
 /**
  * Prepares GTFS data for the raptor algorithm
  */
 export class RaptorAlgorithmFactory {
+  private static readonly DEFAULT_INTERCHANGE_TIME = MIN_INTERCHANGE_TIME;
   private static readonly OVERTAKING_ROUTE_SUFFIX = "overtakes";
 
   /**
@@ -42,7 +43,7 @@ export class RaptorAlgorithmFactory {
     trips.sort((a, b) => a.stopTimes[0].departureTime - b.stopTimes[0].departureTime);
 
     for (const trip of trips) {
-      const path = trip.stopTimes.map(s => s.stop);
+      const path = trip.stopTimes.map(s => s.stopId);
       const routeId = this.getRouteId(trip, tripsByRoute);
 
       if (!routeStopIndex[routeId]) {
@@ -53,7 +54,7 @@ export class RaptorAlgorithmFactory {
         for (let i = path.length - 1; i >= 0; i--) {
           routeStopIndex[routeId][path[i]] = i;
           usefulTransfers[path[i]] = transfers[path[i]] || [];
-          interchange[path[i]] = interchange[path[i]] || MIN_INTERCHANGE_TIME;
+          interchange[path[i]] = interchange[path[i]] || RaptorAlgorithmFactory.DEFAULT_INTERCHANGE_TIME;
           routesAtStop[path[i]] = routesAtStop[path[i]] || [];
 
           if (trip.stopTimes[i].pickUp) {
@@ -77,7 +78,7 @@ export class RaptorAlgorithmFactory {
   }
 
   private static getRouteId(trip: Trip, tripsByRoute: TripsIndexedByRoute) {
-    const routeId = trip.stopTimes.map(s => s.stop + (s.pickUp ? 1 : 0) + (s.dropOff ? 1 : 0)).join();
+    const routeId = trip.stopTimes.map(s => s.stopId + (s.pickUp ? 1 : 0) + (s.dropOff ? 1 : 0)).join();
 
     for (const t of tripsByRoute[routeId] || []) {
       const arrivalTimeA = trip.stopTimes[trip.stopTimes.length - 1].arrivalTime;

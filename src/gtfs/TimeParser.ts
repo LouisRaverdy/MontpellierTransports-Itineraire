@@ -19,4 +19,11 @@ export class TimeParser {
     return this.timeCache[time];
   }
 
+  /**
+   * Convert a date to seconds from midnight
+   */
+  public getTimeFromDate(date: Date) {
+    return date.getHours() * 60 * 60 + date.getMinutes() * 60 + date.getSeconds();
+  }
+
 }

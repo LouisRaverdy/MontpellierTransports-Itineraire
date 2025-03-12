@@ -19,11 +19,14 @@ export type Duration = number;
  * GTFS stop time
  */
 export interface StopTime {
-  stop: StopID;
+  stopId: StopID;
   arrivalTime: Time;
   departureTime: Time;
+  tripId: TripID;
+  stopSequence: number;
   pickUp: boolean;
   dropOff: boolean;
+  headsign: string;
 }
 
 /**
@@ -49,6 +52,7 @@ export interface Transfer extends Leg {
   duration: Duration;
   startTime: Time;
   endTime: Time;
+  transferType: string;
 }
 
 /**
@@ -65,7 +69,7 @@ export type ServiceID = string;
  * GTFS trip
  */
 export interface Trip {
-  tripId: TripID;
+  id: TripID;
   routeId: string;
   directionId: string;
   stopTimes: StopTime[];
@@ -110,15 +114,28 @@ export type CalendarIndex = Record<ServiceID, Calendar>;
  */
 export interface Stop {
   id: StopID,
-  code: string,
   name: string,
-  description: string,
+  code: string,
   latitude: number,
   longitude: number,
-  timezone: string
+  locationType: string,
+  parentStation: string,
+  wheelchairBoarding: string,
 }
 
 /**
  * Stops indexed by ID
  */
 export type StopIndex = Record<StopID, Stop>;
+
+/**
+ * GTFS route
+ */
+export interface Route {
+	id: string;
+	shortName: string;
+	longName: string;
+	type: string;
+	color: string;
+	textColor: string;
+}

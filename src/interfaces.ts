@@ -24,14 +24,19 @@ export interface Ligne {
 
 export interface Direction {
 	noms: {
-		[key: number]: string
-	};
-	path: number[][];
+		terminus_id: number;
+		nom: string;
+	}[];
+	paths: {
+		start_id: number;
+		terminus_id: number;
+		coordinates: number[][];
+	}[];
 	stations: {
 		logical_station: string;
 		physical_station: number;
 		is_terminus: boolean;
-	}[];
+	}[][];
 }
 
 export interface Coords {
@@ -61,14 +66,32 @@ export interface FormattedJourney {
 	duration: number;
 	emissions: number;
 	trip_details: TripDetail[];
+	walk_details?: WalkDetail[];
 }
 
-export interface StopTime {
-	trip_id: string;
-	arrival_time: string;
-	departure_time: string;
-	stop_id: string;
-	stop_sequence: number;
-	pickup_type: string;
-	drop_off_type: string;
+export enum VehicleType {
+	Tram,
+	Bus,
+	Unknown
+}
+
+export const vehicleTypeMapping: { [key: number]: VehicleType } = {
+    0: VehicleType.Tram,
+    3: VehicleType.Bus,
+    715: VehicleType.Bus,
+};
+
+export function getVehicleType(code: number): VehicleType {
+	if (Object.prototype.hasOwnProperty.call(vehicleTypeMapping, code)) {
+		return vehicleTypeMapping[code];
+	}
+	return VehicleType.Unknown;
+}
+
+export interface WalkDetail {
+	path: [number, number][];
+	start_time: number;
+	end_time: number;
+	distance: number;
+	duration: number;
 }

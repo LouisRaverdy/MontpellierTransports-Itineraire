@@ -22,7 +22,7 @@ export class ScanResults {
     const time = this.reverse ?
       trip.stopTimes[startIndex].departureTime - interchange :
       trip.stopTimes[endIndex].arrivalTime + interchange;
-    const stopPi = this.reverse ? trip.stopTimes[startIndex].stop : trip.stopTimes[endIndex].stop;
+    const stopPi = this.reverse ? trip.stopTimes[startIndex].stopId : trip.stopTimes[endIndex].stopId;
 
     this.kArrivals[this.k][stopPi] = time;
     this.bestArrivals[stopPi] = time;

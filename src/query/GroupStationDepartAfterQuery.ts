@@ -4,7 +4,7 @@ import { ResultsFactory } from "../results/ResultsFactory";
 import { getDateNumber } from "./DateUtil";
 import { Journey } from "../results/Journey";
 import { JourneyFilter } from "../results/filter/JourneyFilter";
-import { keyValue } from "../ts-utils/ts_utils";
+import { keyValue } from "../utils/TSUtils";
 import { Arrivals, ConnectionIndex } from "../raptor/ScanResults";
 
 /**
