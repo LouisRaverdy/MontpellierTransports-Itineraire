@@ -1,5 +1,4 @@
-import axios from 'axios';
-import fs, { stat } from 'fs';
+import { promises as fs } from 'fs';
 import JSZip from 'jszip';
 import Papa from 'papaparse';
 import path from 'path';
@@ -21,11 +20,8 @@ async function parseAndSaveCSV(csvData: string, folrderName: string, fileName: s
             complete: async (results) => {
                 const exportPath = path.join(__dirname, '..', 'imports', folrderName, `${fileName.split('.')[0]}.json`);
 
-                if (!fs.existsSync(path.dirname(exportPath))) {
-                    fs.mkdirSync(path.dirname(exportPath), { recursive: true });
-                }
-
-                await fs.promises.writeFile(exportPath, JSON.stringify(results.data));
+                await fs.mkdir(path.dirname(exportPath), { recursive: true });
+                await fs.writeFile(exportPath, JSON.stringify(results.data));
                 resolve();
             },
             header: true,
@@ -40,17 +36,17 @@ async function parseAndSaveCSV(csvData: string, folrderName: string, fileName: s
  *
  * @returns {Promise<void>} A promise that resolves when the process is complete.
  */
-async function downloadStaticGTFS(): Promise<void> {
+export async function downloadStaticGTFS(): Promise<void> {
     try {
-        const response = await axios.get("https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_GTFS.zip", { responseType: 'arraybuffer' });
+        const response = await fetch("https://data.montpellier3m.fr/sites/default/files/ressources/TAM_MMM_GTFS.zip");
+        const data = await response.arrayBuffer();
         const dir = './imports/GTFS';
 
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir, { recursive: true });
-        }
-        fs.writeFileSync('imports/GTFS/gtfs.zip', response.data);
+        await fs.mkdir(dir, { recursive: true });
+        await fs.writeFile('imports/GTFS/gtfs.zip', Buffer.from(data));
+
         const zip = new JSZip();
-        const extracted = await zip.loadAsync(response.data);
+        const extracted = await zip.loadAsync(data);
 
         const filesToExtract = ["stops.txt", "trips.txt", "transfers.txt", "routes.txt", "stop_times.txt", "calendar.txt", "calendar_dates.txt"];
 
@@ -64,15 +60,17 @@ async function downloadStaticGTFS(): Promise<void> {
             await parseAndSaveCSV(csvData, 'GTFS', file);
         }
     } catch (error) {
-        return console.error("Error downloading GTFS data :", error);
+        return process.exit(1);
     }
 }
 
-async function getAPIData(page: string): Promise<void> {
+async function getAPIData(data: string): Promise<void> {
     try {
-        const response = await axios.get(`https://api.montpellier-transports.fr/datas/${page}`);
-        const exportPath = path.join(__dirname, '..', 'exports', `${page}.json`);
-        await fs.promises.writeFile(exportPath, JSON.stringify(response.data));
+        const response = await fetch(`https://api.montpellier-transports.fr/datas/${data}`);
+        const responseData = await response.json();
+
+        const exportPath = path.join(__dirname, '..', 'exports', `${data}.json`);
+        await fs.writeFile(exportPath, JSON.stringify(responseData));
     } catch (error) {
         console.error("Error downloading API data :", error);
     }
@@ -85,7 +83,7 @@ async function startGetter(): Promise<void> {
         getAPIData('lignes')
     ]);
 
-    const stationsData = await fs.promises.readFile('exports/stations.json', 'utf-8');
+    const stationsData = await fs.readFile('exports/stations.json', 'utf-8');
     const stations = new Map<string, Station>(Object.entries(JSON.parse(stationsData)));
     formatTransfers(stations);
 
