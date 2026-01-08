@@ -14,7 +14,7 @@
     "@turf/turf": "^7.3.1",
     "express": "^5.1.0",
     "geojson": "^0.5.0",
-    "geojson-path-finder": "^2.0.2",
+    "geojson-path-finder": "^2.1.0",
     "haversine-distance": "^1.2.4",
     "flatbush": "^3.3.1",
     "jszip": "^3.10.1",
