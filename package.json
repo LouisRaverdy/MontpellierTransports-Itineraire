@@ -16,7 +16,7 @@
     "geojson": "^0.5.0",
     "geojson-path-finder": "^2.1.0",
     "haversine-distance": "^1.2.4",
-    "flatbush": "^3.3.1",
+    "flatbush": "^4.5.1",
     "jszip": "^3.10.1",
     "mysql2": "^3.16.0",
     "papaparse": "^5.5.3"
